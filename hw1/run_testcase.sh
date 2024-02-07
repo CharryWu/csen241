@@ -6,7 +6,7 @@ do
     echo "Round: $current"
 
     # CPU-Test-1
-    sysbench --test=cpu --cpu-max-prime=500 run | tee cpu-test-1-$current.txt
+    sysbench --test=cpu --cpu-max-prime=2000 run | tee cpu-test-1-$current.txt
 
     # CPU-Test-2
     sysbench --test=cpu --cpu-max-prime=5000 run | tee cpu-test-2-$current.txt
