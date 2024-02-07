@@ -18,14 +18,14 @@ do
     sysbench --test=memory --memory-block-size=1M run | tee memory-test-2-$current.txt
 
     # File Read
-    sysbench --num-threads=1 --test=fileio --file-total-size=5G --file-test-mode=rndrd prepare && echo 3 > /proc/sys/vm/drop_caches
-    sysbench --num-threads=1 --test=fileio --file-total-size=5G --file-test-mode=rndrd run | tee fileio-test-rndrd-$current.txt && echo 3 > /proc/sys/vm/drop_caches
-    sysbench --num-threads=1 --test=fileio --file-total-size=5G --file-test-mode=rndrd cleanup && echo 3 > /proc/sys/vm/drop_caches
+    sysbench --num-threads=1 --test=fileio --file-total-size=2G --file-test-mode=rndrd prepare && echo 3 > /proc/sys/vm/drop_caches
+    sysbench --num-threads=1 --test=fileio --file-total-size=2G --file-test-mode=rndrd run | tee fileio-test-rndrd-$current.txt && echo 3 > /proc/sys/vm/drop_caches
+    sysbench --num-threads=1 --test=fileio --file-total-size=2G --file-test-mode=rndrd cleanup && echo 3 > /proc/sys/vm/drop_caches
 
 
     # File Write
-    sysbench --num-threads=1 --test=fileio --file-total-size=5G --file-test-mode=rndwr prepare && echo 3 > /proc/sys/vm/drop_caches
-    sysbench --num-threads=1 --test=fileio --file-total-size=5G --file-test-mode=rndwr run | tee fileio-test-rndwr-$current.txt && echo 3 > /proc/sys/vm/drop_caches
-    sysbench --num-threads=1 --test=fileio --file-total-size=5G --file-test-mode=rndwr cleanup && echo 3 > /proc/sys/vm/drop_caches
+    sysbench --num-threads=1 --test=fileio --file-total-size=2G --file-test-mode=rndwr prepare && echo 3 > /proc/sys/vm/drop_caches
+    sysbench --num-threads=1 --test=fileio --file-total-size=2G --file-test-mode=rndwr run | tee fileio-test-rndwr-$current.txt && echo 3 > /proc/sys/vm/drop_caches
+    sysbench --num-threads=1 --test=fileio --file-total-size=2G --file-test-mode=rndwr cleanup && echo 3 > /proc/sys/vm/drop_caches
 
 done
